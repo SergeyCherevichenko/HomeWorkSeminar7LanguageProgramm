@@ -20,7 +20,7 @@ class MyLib
         {
             for (int j = 0; j < multArray.GetLength(1); j++)
             {
-                multArray[i, j] =Math.Round(random.NextDouble() * (maxValue -minValue) + minValue,1);
+                multArray[i, j] = Math.Round(random.NextDouble() * (maxValue - minValue) + minValue, 1);
             }
         }
         return multArray;
@@ -35,51 +35,52 @@ class MyLib
             }
             Console.WriteLine();
         }
-        
+
     }
     public static int[,] FillMultArrayInt(int height, int weight)
     {
-        int[,] multArray = new int[height,weight];
-        Random random= new Random();
-        for (int i = 0; i < multArray.GetLength(0);i++)
+        int[,] multArray = new int[height, weight];
+        Random random = new Random();
+        for (int i = 0; i < multArray.GetLength(0); i++)
         {
-            for(int j = 0; j < multArray.GetLength(1);j++)
+            for (int j = 0; j < multArray.GetLength(1); j++)
             {
-                multArray[i,j] = random.Next(1,10);
+                multArray[i, j] = random.Next(0, 2);
             }
 
         }
         return multArray;
     }
-    public static void PrintArray(int [,] multArray)
+    public static void PrintArray(int[,] multArray)
     {
-        for(int i = 0; i < multArray.GetLength(0);i++)
+        for (int i = 0; i < multArray.GetLength(0); i++)
         {
-            for(int j = 0;j < multArray.GetLength(1);j++)
+            for (int j = 0; j < multArray.GetLength(1); j++)
             {
-                Console.Write(multArray[i,j] +" ");
+                Console.Write(multArray[i, j] + " ");
             }
             Console.WriteLine();
         }
     }
-    public static void FindElementMultArray( int [,] multArray, int index1, int index2)
+    public static void FindElementMultArray(int[,] multArray, int index1, int index2)
     {
-        if(index1>multArray.GetLength(0)||index1<0||index2>multArray.GetLength(1)||index2<0)
+        if (index1 > multArray.GetLength(0) || index1 < 0 || index2 > multArray.GetLength(1) || index2 < 0)
         {
             Console.WriteLine($"Элемента с индексами ({index1}, {index2}) не существует в этом массиве! ");
         }
         else
         {
-        for (int i = 0;i < multArray.GetLength(0); i++)
-        {
-            for(int j=0;j < multArray.GetLength(1);j++)
+            for (int i = 0; i < multArray.GetLength(0); i++)
             {
-                if(i==index1 && j==index2) Console.WriteLine($"На позиции ({index1}, {index2}) находится элемент {multArray[i,j]} ");
-                
+                for (int j = 0; j < multArray.GetLength(1); j++)
+                {
+                    if (i == index1 && j == index2) Console.WriteLine($"На позиции ({index1}, {index2}) находится элемент {multArray[i, j]} ");
+
+                }
             }
         }
-        }
     }
+   
 
 
 }
